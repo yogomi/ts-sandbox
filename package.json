@@ -4,8 +4,28 @@
   "description": "",
   "main": "src/main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack --watch --config webpack.dev.js & nodemon dist/main.bundle.js"
+  },
+  "nodemonConfig": {
+    "ext": "ts",
+    "ignore": [
+      "./tmp/"
+    ],
+    "delay": "500"
   },
   "author": "Makoto Yano",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.10.0",
+    "webpack-node-externals": "^3.0.0"
+  }
 }
